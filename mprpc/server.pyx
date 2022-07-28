@@ -44,7 +44,7 @@ cdef class RPCServer:
 
         if 'unpack_encoding' in kwargs:
             raise DeprecationWarning('unpack_encoding is deprecated.')
-        self._unpack_params = kwargs.pop('unpack_params', dict(use_list=False))
+        self._unpack_params = kwargs.pop('unpack_params', dict(raw=False, use_list=False))
 
         self._tcp_no_delay = kwargs.pop('tcp_no_delay', False)
         self._methods = {}
